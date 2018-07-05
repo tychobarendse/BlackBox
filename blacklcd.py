@@ -2,7 +2,7 @@ import time
 import CHIP_IO.GPIO
 import os.path
 from PIL import Image
-from luma.core.serial import spi
+from luma.core.interface.serial import spi
 from luma.core.render import canvas
 from luma.lcd.device import pcd8544, st7735, uc1701x
 
