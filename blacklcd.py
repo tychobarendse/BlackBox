@@ -25,3 +25,4 @@ posn = ((device.width - logo.width) // 2, 0)
 background.paste(logo, posn)
 device.display(background.convert(device.mode))
 time.sleep(2)
+
