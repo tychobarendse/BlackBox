@@ -8,7 +8,7 @@ from luma.lcd.device import pcd8544, st7735, uc1701x
 
 img_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'starwars.png'))
 serial = spi(port=32766, device=0, gpio=CHIP_IO.GPIO, gpio_DC="CSID1", gpio_RST="CSID0")
-device = ss7735(serial)
+device = st7735(serial)
 
 with canvas(device) as draw:
     draw.rectangle(device.bounding_box, outline="white", fill="black")
