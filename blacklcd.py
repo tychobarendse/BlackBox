@@ -10,12 +10,12 @@ img_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'PAL.png'))
 serial = spi(port=32766, device=0, gpio=CHIP_IO.GPIO, gpio_DC="CSID1", gpio_RST="CSID0")
 device = st7735(serial)
 
-
+'''
 with canvas(device) as draw:
     draw.rectangle(device.bounding_box, outline="white", fill="black")
     draw.text((30, 40), "Hello World", fill="red")
 time.sleep(1)
- 
+''' 
 
 logo = Image.open(img_path).convert("RGBA").resize(device.size)
 #img = Image.new(logo.mode, logo.size, (255,) * 4)
@@ -24,5 +24,5 @@ background = Image.new("RGBA", device.size, "black")
 posn = ((device.width - logo.width) // 2, 0)
 background.paste(logo, posn)
 device.display(background.convert(device.mode))
-time.sleep(2)
+time.sleep(5)
 
