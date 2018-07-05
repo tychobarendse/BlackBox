@@ -10,5 +10,3 @@ device = ss7735(serial)
     draw.rectangle(device.bounding_box, outline="white", fill="black")
     draw.text((30, 40), "Hello World", fill="red")
  time.sleep(10)
-
-#github test
