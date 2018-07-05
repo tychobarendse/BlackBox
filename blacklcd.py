@@ -16,7 +16,7 @@ with canvas(device) as draw:
 time.sleep(10)
  
 # open photo
-photo = Image.open(img_path) #.convert("RGBA")
+photo = Image.open(img_path).convert("RGBA")
 # display on screen for a few seconds
-device.display(photo.convert(device.mode))
+device.display(photo) #.convert(device.mode))
 time.sleep(10)
