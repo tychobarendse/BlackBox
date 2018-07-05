@@ -6,7 +6,7 @@ from luma.core.interface.serial import spi
 from luma.core.render import canvas
 from luma.lcd.device import pcd8544, st7735, uc1701x
 
-img_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'starwars.png'))
+img_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'PAL.png'))
 serial = spi(port=32766, device=0, gpio=CHIP_IO.GPIO, gpio_DC="CSID1", gpio_RST="CSID0")
 device = st7735(serial)
 
