@@ -17,8 +17,8 @@ with canvas(device) as draw:
 time.sleep(1)
  
 
-logo = Image.open(img_path).convert("RGBA")
-img = Image.new(logo.mode, logo.size, (255,) * 4)
+logo = Image.open(img_path).convert("RGBA").resize(device.size)
+#img = Image.new(logo.mode, logo.size, (255,) * 4)
 
 background = Image.new("RGBA", device.size, "black")
 posn = ((device.width - logo.width) // 2, 0)
