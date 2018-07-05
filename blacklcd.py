@@ -22,6 +22,6 @@ img = Image.new(logo.mode, logo.size, (255,) * 4)
 
 background = Image.new("RGBA", device.size, "white")
 posn = ((device.width - logo.width) // 2, 0)
-background.paste(img, posn)
+background.paste(logo, posn)
 device.display(background.convert(device.mode))
 time.sleep(2)
