@@ -10,14 +10,18 @@ img_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'starwars.png
 serial = spi(port=32766, device=0, gpio=CHIP_IO.GPIO, gpio_DC="CSID1", gpio_RST="CSID0")
 device = st7735(serial)
 
+
 with canvas(device) as draw:
     draw.rectangle(device.bounding_box, outline="white", fill="black")
     draw.text((30, 40), "Hello World", fill="red")
 time.sleep(1)
  
-# open photo
-photo = Image.open(img_path)#.convert("RGBA
-photo = Image.open(img_path).transform(device.size, Image.AFFINE, (1, 0, 0, 0, 1, 0), Image.BILINEAR).convert(device.mode)
-# display on screen for a few seconds
-device.display(photo) #.convert(device.mode))
-time.sleep(10)
+
+logo = Image.open(img_path).convert("RGBA")
+img = Image.new(logo.mode, logo.size, (255,) * 4)
+
+background = Image.new("RGBA", device.size, "white")
+posn = ((device.width - logo.width) // 2, 0)
+background.paste(img, posn)
+device.display(background.convert(device.mode))
+time.sleep(2)
