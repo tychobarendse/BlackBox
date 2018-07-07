@@ -29,7 +29,7 @@ time.sleep(5)
 
 
 background = Image.new("RGBA", device.size, "black")
-while true:
+while True:
  im = ImageGrab.grab().convert("RGBA").resize(device.size)
  posn = ((device.width - im.width) // 2, 0)
 	background.paste(im, posn)
