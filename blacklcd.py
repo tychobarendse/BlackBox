@@ -32,7 +32,7 @@ background = Image.new("RGBA", device.size, "black")
 while True:
  im = ImageGrab.grab().convert("RGBA").resize(device.size)
  posn = ((device.width - im.width) // 2, 0)
-	background.paste(im, posn)
+ background.paste(im, posn)
  device.display(background.convert(device.mode))
 
 
