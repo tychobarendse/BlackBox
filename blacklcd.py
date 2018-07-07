@@ -1,6 +1,7 @@
 import time
 import CHIP_IO.GPIO
 import os.path
+import pyscreenshot as ImageGrab
 from PIL import Image
 from luma.core.interface.serial import spi
 from luma.core.render import canvas
@@ -25,4 +26,14 @@ posn = ((device.width - logo.width) // 2, 0)
 background.paste(logo, posn)
 device.display(background.convert(device.mode))
 time.sleep(5)
+
+
+background = Image.new("RGBA", device.size, "black")
+while true:
+ im = ImageGrab.grab().convert("RGBA").resize(device.size)
+ posn = ((device.width - im.width) // 2, 0)
+	background.paste(im, posn)
+ device.display(background.convert(device.mode))
+
+
 
